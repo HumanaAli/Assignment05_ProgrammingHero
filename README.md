@@ -44,9 +44,9 @@ Props are data passed from a parent component to a child component. State is dat
 
 React uses the `key` to identify each item in a list. A unique key helps React update only the items that changed and keeps list rendering efficient.
 
-### 6. What is conditional rendering? Show one place you used it.
+### ### 6. What is conditional rendering? Show one place you used it.
 
-Conditional rendering means displaying different UI depending on a condition. In this project, the `YourStack` component shows an empty-state message when no technologies have been selected and shows the selected technologies when the stack is not empty.
+Conditional rendering means showing different content based on a condition. In this project, I used it in the `YourStack` component to show **“Your stack is empty.”** when no technology is selected, and to show the selected technologies when the stack contains items.
 
 ### 7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
 
