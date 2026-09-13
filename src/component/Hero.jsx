@@ -1,8 +1,9 @@
+import bannerStack from '../assets/banner-stack.png'
 function Hero() {
   return (
     <section className="bg-purple-50 py-16">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-10">
-        
+
         <div className="text-center md:text-left max-w-2xl">
           <h1 className="text-5xl font-bold text-gray-900 mb-5 leading-tight">
             Build Your{' '}
@@ -29,10 +30,10 @@ function Hero() {
         </div>
 
         <img
-  src="/src/assets/banner-stack.png"
-  alt="Developer stack illustration"
-  className="w-full max-w-md"
-/>
+          src={bannerStack}
+          alt="Developer stack illustration"
+          className="w-full max-w-md"
+        />
 
       </div>
     </section>
