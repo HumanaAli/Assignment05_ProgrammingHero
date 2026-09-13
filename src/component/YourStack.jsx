@@ -1,3 +1,4 @@
+
 import { toast } from 'react-toastify'
 
 function YourStack({ stack, setStack }) {
@@ -13,26 +14,15 @@ function YourStack({ stack, setStack }) {
 
   return (
     <aside className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm lg:sticky lg:top-24 h-fit">
-      <div className="flex items-start justify-between mb-6">
-        <div>
-          <h2 className="text-xl font-bold text-gray-900">
-            Your Stack
-          </h2>
+      <div className="mb-6">
+        <h2 className="text-xl font-bold text-gray-900">
+          Your Stack
+        </h2>
 
-          <p className="text-sm text-gray-500 mt-1">
-            {stack.length}{' '}
-            {stack.length === 1 ? 'Technology' : 'Technologies'} Selected
-          </p>
-        </div>
-
-        {stack.length > 0 && (
-          <button
-            onClick={handleRemoveAll}
-            className="text-sm text-red-500 hover:text-red-600 font-medium"
-          >
-            Remove All
-          </button>
-        )}
+        <p className="text-sm text-gray-500 mt-1">
+          {stack.length}{' '}
+          {stack.length === 1 ? 'Technology' : 'Technologies'} Selected
+        </p>
       </div>
 
       {stack.length === 0 ? (
@@ -42,38 +32,47 @@ function YourStack({ stack, setStack }) {
           </p>
         </div>
       ) : (
-        <div className="space-y-3">
-          {stack.map((tech) => (
-            <div
-              key={tech.id}
-              className="flex items-center gap-3 border border-gray-100 rounded-xl p-3"
-            >
-              <img
-                src={tech.icon}
-                alt={tech.name}
-                className="w-10 h-10 object-contain"
-              />
-
-              <div className="flex-1">
-                <h3 className="font-semibold text-gray-800">
-                  {tech.name}
-                </h3>
-
-                <p className="text-xs text-gray-500">
-                  {tech.category}
-                </p>
-              </div>
-
-              <button
-                onClick={() => handleRemove(tech.id, tech.name)}
-                className="text-gray-400 hover:text-red-500 text-lg"
-                aria-label={`Remove ${tech.name}`}
+        <>
+          <div className="space-y-3">
+            {stack.map((tech) => (
+              <div
+                key={tech.id}
+                className="flex items-center gap-3 border border-gray-100 rounded-xl p-3"
               >
-                ✕
-              </button>
-            </div>
-          ))}
-        </div>
+                <img
+                  src={tech.icon}
+                  alt={tech.name}
+                  className="w-10 h-10 object-contain"
+                />
+
+                <div className="flex-1">
+                  <h3 className="font-semibold text-gray-800">
+                    {tech.name}
+                  </h3>
+
+                  <p className="text-xs text-gray-500">
+                    {tech.category}
+                  </p>
+                </div>
+
+                <button
+                  onClick={() => handleRemove(tech.id, tech.name)}
+                  className="text-gray-400 hover:text-red-500 text-lg"
+                  aria-label={`Remove ${tech.name}`}
+                >
+                  ✕
+                </button>
+              </div>
+            ))}
+          </div>
+
+          <button
+            onClick={handleRemoveAll}
+            className="w-full mt-5 bg-red-50 text-red-500 border border-red-100 rounded-xl py-3 font-medium hover:bg-red-100 transition"
+          >
+            Remove All
+          </button>
+        </>
       )}
     </aside>
   )
