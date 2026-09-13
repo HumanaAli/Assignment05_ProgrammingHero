@@ -20,7 +20,8 @@ function YourStack({ stack, setStack }) {
           </h2>
 
           <p className="text-sm text-gray-500 mt-1">
-            {stack.length} {stack.length === 1 ? 'Technology' : 'Technologies'} Selected
+            {stack.length}{' '}
+            {stack.length === 1 ? 'Technology' : 'Technologies'} Selected
           </p>
         </div>
 
@@ -35,13 +36,9 @@ function YourStack({ stack, setStack }) {
       </div>
 
       {stack.length === 0 ? (
-        <div className="text-center py-10">
+        <div className="border border-dashed border-gray-200 rounded-xl p-8 text-center">
           <p className="text-gray-400">
-            No technologies selected yet.
-          </p>
-
-          <p className="text-sm text-gray-400 mt-2">
-            Add technologies from the list to build your stack.
+            Your stack is empty.
           </p>
         </div>
       ) : (
@@ -83,3 +80,4 @@ function YourStack({ stack, setStack }) {
 }
 
 export default YourStack
+
